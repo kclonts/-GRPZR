@@ -17,6 +17,8 @@ private:
     const Section* sectionList[MAX_SECTIONS]; //These two may need to be changed depending on section class by TC
     const Performance* performanceList[MAX_PERFORMANCES];
     int number_of_seat_rows;
+    int numOfSections;
+    int numOfPerformances;
 
 public:
     Venue(const string& name_,
