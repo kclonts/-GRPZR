@@ -1,26 +1,38 @@
 #include <iostream>
 #include <string>
+#include "Venue.h"
+#include "Seat_Row.h"
+#include "Seat.h"
 #include "Address.h"
 
 using namespace std;
 
-Venue addVenue();
+Venue* addVenue();
 
 int main() {
-	//int funcsel;
-	Venue venues[1];
+	int funcsel = 0;
+	Venue* venue_;
 
 	cout << "Logged in as System Administrator" << endl;
-	//cout << "What would you like to do?\nenter 1 for adding a venue" << endl;
 
-	//cin >> funcsel;
+	while (true) {
+		cout << "To add a venue enter \"1\". To exit, enter -1." << endl;
+		cin >> funcsel;
 
-	venues[0] = addVenue();
-
-
+		switch (funcsel) {
+		case 1:
+			venue_ = addVenue();
+			break;
+		case -1:
+			return 0;
+			break;
+		default:
+			cout << "Invalid input. Please try again." << endl;
+		}
+	}
 }
 
-Venue addVenue() {
+Venue* addVenue() {
 	string name, street, city, state;
 	int zip;
 
@@ -32,12 +44,12 @@ Venue addVenue() {
 	cin >> city;
 	cout << "\nState" << endl;
 	cin >> state;
-	cout << "\nZip";
+	cout << "\nZip" << endl;
 	cin >> zip;
 
-	Address* address_ = new Address(street, city, state, zip);
+	Address address_ = Address(street, city, state, zip);
 
-	Venue* venue_ = new Venue(name, address);
+	Venue* venue_ = new Venue(name, address_);
 
-	return venue;
+	return venue_;
 }
