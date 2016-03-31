@@ -27,6 +27,26 @@ void Venue::Display() const
     }*/
 }
 
+void Venue::DisplayAll() const
+{
+    cout<<name<<endl;
+    address->Display();
+    cout<<"\n Seating Rows"<<endl;
+    
+    for(int i=0;i<number_of_seat_rows;i++)
+    {
+        cout<<"Row "<<seat_rows[i]->row_name<<"\tSeats 1 - "<<seat_rows[i]->row_name<<endl;
+    }
+    
+    cout<<"\nSections"<<endl;
+    for(int i=0;i<numOfSections;i++)
+    {
+        sectionList[i]->Display();
+        cout<<endl;
+    }
+    
+}
+
 // Return number of seats
 int Venue::Capacity() const
 {
