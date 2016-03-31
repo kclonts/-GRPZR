@@ -1,7 +1,6 @@
 #pragma once
 #include <string>
 #include "Address.h"
-#include "Seat.h"
 #include "Seat_Row.h"
 
 class Venue
