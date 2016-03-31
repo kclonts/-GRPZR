@@ -23,6 +23,8 @@ public:
     int Capacity() const;     // Number of seats
 
     void Display() const;
+    
+    void DisplayAll()const;
 
     int Number_of_Seat_Rows() const
     {
