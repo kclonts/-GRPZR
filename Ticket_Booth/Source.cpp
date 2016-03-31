@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cassert>
 #include "Venue.h"
 #include "Seat_Row.h"
 #include "Seat.h"
@@ -11,7 +12,8 @@ Venue* addVenue();
 
 int main() {
 	int funcsel = 0;
-	Venue* venue_;
+	int venue_count = 0;
+	Venue* venue_[100];
 
 	cout << "Logged in as System Administrator" << endl;
 
@@ -19,9 +21,12 @@ int main() {
 		cout << "To add a venue enter \"1\". To exit, enter -1." << endl;
 		cin >> funcsel;
 
+		cin.ignore(INT_MAX, '\n');
+
 		switch (funcsel) {
 		case 1:
-			venue_ = addVenue();
+			venue_[venue_count] = addVenue();
+			venue_count++;
 			break;
 		case -1:
 			return 0;
@@ -36,16 +41,17 @@ Venue* addVenue() {
 	string name, street, city, state;
 	int zip;
 
-	cout << "\nEnter the name of the venue" << endl;
+	cout << "\nEnter the name of the venue: ";
 	cin >> name;
-	cout << "\nStreet Address" << endl;
+	cout << "\nStreet Address: ";
 	cin >> street;
-	cout << "\nCity" << endl;
+	cout << "\nCity: ";
 	cin >> city;
-	cout << "\nState" << endl;
+	cout << "\nState: ";
 	cin >> state;
-	cout << "\nZip" << endl;
+	cout << "\nZip: ";
 	cin >> zip;
+	cout << endl;
 
 	Address address_ = Address(street, city, state, zip);
 
