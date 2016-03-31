@@ -1,6 +1,5 @@
 #include <string.h>
 #include <iostream>
-#include <cassert>
 #include "Venue.h"
 #include "Seat_Row.h"
 using namespace std;
