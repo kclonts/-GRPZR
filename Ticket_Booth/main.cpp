@@ -10,7 +10,6 @@ using namespace std;
 
 Venue* addVenue();
 void inputseatrow(Venue* venue);
-void AddSection();
 
 int main() {
 	int funcsel = 0;
@@ -28,8 +27,8 @@ int main() {
 		switch (funcsel) {
 		case 1:
 			venue_[venue_count] = addVenue();
-			venue_count++;
 			venue_[venue_count]->DisplayAll();
+			venue_count++;
 			break;
 		case -1:
 			return 0;
@@ -47,14 +46,19 @@ Venue* addVenue() {
 
 	cout << "\nEnter the name of the venue: ";
 	cin >> name;
+	cin.ignore(INT_MAX, '\n');
 	cout << "\nStreet Address: ";
 	cin >> street;
+	cin.ignore(INT_MAX, '\n');
 	cout << "\nCity: ";
 	cin >> city;
+	cin.ignore(INT_MAX, '\n');
 	cout << "\nState: ";
 	cin >> state;
+	cin.ignore(INT_MAX, '\n');
 	cout << "\nZip: ";
 	cin >> zip;
+	cin.ignore(INT_MAX, '\n');
 	cout << endl;
 
 	Address address_ = Address(street, city, state, zip);
@@ -68,6 +72,7 @@ Venue* addVenue() {
 
 void inputseatrow(Venue* venue) {
 	string space = " ";
+	string check;
 	string row_name;
 	int num_seats;
 	int i = 0;
@@ -82,8 +87,10 @@ void inputseatrow(Venue* venue) {
 
 		cout << "\nRow Name: ";
 		cin >> row_name;
+		cin.ignore(INT_MAX, '\n');
 		cout << "\nNumber of Seats: ";
 		cin >> num_seats;
+		cin.ignore(INT_MAX, '\n');
 
 		seat_row[i] = new Seat_Row(row_name);
 
@@ -96,32 +103,8 @@ void inputseatrow(Venue* venue) {
 
 		i++;
 
-	} while (strcmp(row_name, space) != 0);
-}
-/*function to add new section*/
-void Add_Section() {
-	string str[MAX_ROWS];
-	int row_begin[MAX_ROWS];
-	int row_stop[MAX_ROWS];
-	int ctr = 0;
-	string name;
+		cout << "\n Add another row? y/n ";
+		cin >> check;
 
-	cout << "Seating section name: " ;
-	getline(cin, name);
-
-	do {
-			cout << "Row name: ";
-			getline(cin, str[ctr]);
-			if (str[ctr].empty()) {
-				break;
-			}
-			else {
-			cout << "First seat number: ";
-			cin >> row_begin[ctr];
-			cout << "Last row number: ";
-			cin >> row_stop[ctr];
-		}
-		ctr++;
-		cin.ignore(INT_MAX, '\n');
-	} while (ctr < 1000);
+	} while ( check != "n");
 }
