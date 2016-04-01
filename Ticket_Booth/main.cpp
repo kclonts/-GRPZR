@@ -135,4 +135,5 @@ void Add_Section() {
 		ctr++;
 		cin.ignore(INT_MAX, '\n');
 	} while (ctr < 1000);
+	//sectionList[MAX_SECTIONS++] = 
 }
