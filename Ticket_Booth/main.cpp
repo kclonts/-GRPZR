@@ -28,6 +28,7 @@ int main() {
 		case 1:
 			venue_[venue_count] = addVenue();
 			venue_count++;
+			venue_[venue_count]->DisplayAll();
 			break;
 		case -1:
 			return 0;
@@ -94,5 +95,5 @@ void inputseatrow(Venue* venue) {
 
 		i++;
 
-	} while (row_name.compare(space) != 0);
+	} while (strcmp(row_name, space) != 0);
 }
