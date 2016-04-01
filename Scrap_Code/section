@@ -1,0 +1,24 @@
+#pragma once
+#include <iostream>
+#include <string>
+#include "Seat.h"
+using namespace std;
+
+class Section{
+		
+	private:
+	string section_name;
+	string* section_row [100];
+	int row_start [100];
+	int row_end[100];
+	int row_count;
+
+	public:
+	Section(){};
+	Section(string SectionName, string **RowName, int RowStart[100], int RowEnd[100], int RowCount);
+	void Display() const;
+	
+	~Section();
+
+
+};
