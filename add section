@@ -1,0 +1,30 @@
+void addSection (Venue* ven)
+{
+    int count=0;
+    string secName;
+    string* name[100];
+    int rowStart[100];
+    int rowEnd[100];
+    cout<<"Enter section name"<<endl;
+    getline(cin,secName);
+    char check;
+    do{
+        string temp1;
+        int temp2;
+        int temp3;
+    cout<<"Enter Row Name"<<endl;
+    getline(cin,temp1);
+    cout<<"Enter Start of Row"<<endl;
+    cin>>temp2;
+    cout<<"Enter the End of the Row"<<endl;
+    cin>>temp3;
+        *name[count]=temp1;
+        rowStart[count]=temp2;
+        rowEnd[count++]=temp3;
+    
+    cout<<"do you want to add a row to the section A/Q"<<endl;
+        check=getchar();
+    }while(check!='Q');
+    ven->sectionList[0]=new Section(secName, name, rowStart, rowEnd, 1);
+    
+    }
