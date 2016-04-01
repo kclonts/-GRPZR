@@ -8,7 +8,7 @@ class Venue
 public:
     static const int MAX_SEAT_ROWS = 1000;
     static const int MAX_SECTIONS=100;
-    static const int MAX_PERFORM=100;
+    static const int MAX_PERFORMANCES=100;
 
 private:
     string name;
