@@ -1,17 +1,17 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "Seat.h"
+
 using namespace std;
 
 class Section{
 		
 	private:
-	string section_name;
-	string *section_row;
-	int *row_start;
-	int *row_end;
-	int row_count;
+	string section_name;	
+	string *section_row;	//string array for row names
+	int *row_start;		//int array for row start
+	int *row_end;		//row range end
+	int row_count;		// number of rows in section
 
 	public:
 	Section(){};
