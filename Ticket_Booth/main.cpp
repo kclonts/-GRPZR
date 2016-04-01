@@ -10,6 +10,7 @@ using namespace std;
 
 Venue* addVenue();
 void inputseatrow(Venue* venue);
+void AddSection();
 
 int main() {
 	int funcsel = 0;
@@ -96,4 +97,31 @@ void inputseatrow(Venue* venue) {
 		i++;
 
 	} while (strcmp(row_name, space) != 0);
+}
+/*function to add new section*/
+void Add_Section() {
+	string str[MAX_ROWS];
+	int row_begin[MAX_ROWS];
+	int row_stop[MAX_ROWS];
+	int ctr = 0;
+	string name;
+
+	cout << "Seating section name: " ;
+	getline(cin, name);
+
+	do {
+			cout << "Row name: ";
+			getline(cin, str[ctr]);
+			if (str[ctr].empty()) {
+				break;
+			}
+			else {
+			cout << "First seat number: ";
+			cin >> row_begin[ctr];
+			cout << "Last row number: ";
+			cin >> row_stop[ctr];
+		}
+		ctr++;
+		cin.ignore(INT_MAX, '\n');
+	} while (ctr < 1000);
 }
