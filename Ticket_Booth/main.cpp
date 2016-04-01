@@ -28,6 +28,7 @@ int main() {
 		switch (funcsel) {
 		case 1:
 			venue_[venue_count] = addVenue();
+			Add_Section();
 			venue_[venue_count]->DisplayAll();
 			venue_count++;
 			break;
@@ -135,5 +136,6 @@ void Add_Section() {
 		ctr++;
 		cin.ignore(INT_MAX, '\n');
 	} while (ctr < 1000);
-	//sectionList[MAX_SECTIONS++] = 
+	Section *sec1 = new Section("Top", str,row_begin,row_stop, ctr);
+	sectionList[numOfSections++] = sec1;
 }
