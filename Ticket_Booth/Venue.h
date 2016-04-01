@@ -2,6 +2,7 @@
 #include <string>
 #include "Address.h"
 #include "Seat_Row.h"
+#include "Section.h"
 
 class Venue
 {
@@ -13,14 +14,14 @@ public:
 private:
     string name;
     const Address* address;
-    const Seat_Row* seat_rows[MAX_SEAT_ROWS];
     const Section* sectionList[MAX_SECTIONS]; //These two may need to be changed depending on section class by TC
-    const Performance* performanceList[MAX_PERFORMANCES];
+   // const Performance* performanceList[MAX_PERFORMANCES];
     int number_of_seat_rows;
     int numOfSections;
     int numOfPerformances;
 
 public:
+    const Seat_Row* seat_rows[MAX_SEAT_ROWS];
     Venue(const string& name_,
         const Address& address_);
 
