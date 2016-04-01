@@ -9,6 +9,7 @@
 using namespace std;
 
 Venue* addVenue();
+void inputseatrow(Venue* venue);
 
 int main() {
 	int funcsel = 0;
@@ -39,6 +40,7 @@ int main() {
 
 Venue* addVenue() {
 	string name, street, city, state;
+	
 	int zip;
 
 	cout << "\nEnter the name of the venue: ";
@@ -57,5 +59,40 @@ Venue* addVenue() {
 
 	Venue* venue_ = new Venue(name, address_);
 
+	inputseatrow(venue_);
+
 	return venue_;
+}
+
+void inputseatrow(Venue* venue) {
+	string space = " ";
+	string row_name;
+	int num_seats;
+	int i = 0;
+	int j = 0;
+
+	Seat_Row* seat_row[100];
+	Seat* seat;
+
+	cout << "Enter seat row information\nEnter blank line for name when finished" << endl;
+
+	do {
+
+		cout << "\nRow Name: ";
+		cin >> row_name;
+		cout << "\nNumber of Seats: ";
+		cin >> num_seats;
+
+		seat_row[i] = new Seat_Row(row_name);
+
+		while (j < num_seats) {
+			seat = new Seat(j + 1);
+			seat_row[i]->Add_Seat(seat);
+		}
+
+		venue->Add_Seat_Row(seat_row[0]);
+
+	} while (row_name.compare(space) != 0);
+
+
 }
