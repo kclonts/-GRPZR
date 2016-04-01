@@ -16,9 +16,9 @@ private:
     const Address* address;
     const Section* sectionList[MAX_SECTIONS]; //These two may need to be changed depending on section class by TC
    // const Performance* performanceList[MAX_PERFORMANCES];
-    int number_of_seat_rows;
-    int numOfSections;
-    int numOfPerformances;
+    int number_of_seat_rows=0;
+    int numOfSections=0;
+    int numOfPerformances=0;
 
 public:
     const Seat_Row* seat_rows[MAX_SEAT_ROWS];
