@@ -86,13 +86,13 @@ void inputseatrow(Venue* venue) {
 		seat_row[i] = new Seat_Row(row_name);
 
 		while (j < num_seats) {
-			seat = new Seat(j + 1);
+			seat = new Seat(++j);
 			seat_row[i]->Add_Seat(seat);
 		}
 
 		venue->Add_Seat_Row(seat_row[0]);
 
+		i++;
+
 	} while (row_name.compare(space) != 0);
-
-
 }
