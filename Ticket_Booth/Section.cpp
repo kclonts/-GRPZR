@@ -10,7 +10,7 @@ void Section::Display() const {
 
 cout << "Section: " << section_name << endl;
    for(int i = 0; i < row_count; i++){
-	cout << "Row " << *section_row << " Seats " << *row_start << " - " << *row_end << "\n" << endl;
+	cout << "Row " << *section_row[i] << " Seats " << *row_start[i] << " - " << *row_end[i] << "\n" << endl;
    }
 
 }
