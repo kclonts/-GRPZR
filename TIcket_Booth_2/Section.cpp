@@ -45,7 +45,7 @@ void Section::get_section(int i,
 	Required: row name and number
 	Action: object created and stored to array
 */
-Seat* Section::Add_A_Seat(string& Row, int& Seat_number)
+Seat* Section::Add_A_Seat(string& Row, int& Seat_number) //must add section name to initialization one seat class is complete
 {
 	Seat* s1 = new Seat(Row, Seat_number);
 	return s1;
