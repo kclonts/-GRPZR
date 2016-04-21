@@ -15,6 +15,8 @@ void Command_Processor::Create_Menus()
 {
     // Menu for Initial command state
     Menu* menu = new Menu("Enter command number");
+	cout << endl;
+
     menu->Add_Command("Select Venue");
     //menu->Add_Command("Add State");
     menu->Add_Command("Quit");
@@ -55,6 +57,7 @@ void Command_Processor::Process_Commands(Venue** venues_,
 
     while (command_state != Done)
     {
+		cout << endl;
         if (command_state == Venue_Selected)
         {
             cout << "Selected Venue is "
@@ -84,6 +87,7 @@ void Command_Processor::Process_Command_0(const string& cmd)
     {
         // Select state
         //cout << "Select State command\n";
+		cout << endl;
         Select_Venue();
         command_state = Venue_Selected;
     }
@@ -97,7 +101,8 @@ void Command_Processor::Process_Command_0(const string& cmd)
     else
     {
         //cout << "Quit command\n";
-        Output_XML();
+		cout << endl;
+		Output_XML();
         command_state = Done;
     }
 }
@@ -128,7 +133,7 @@ void Command_Processor::Process_Command_1(const string& cmd)
     }
     else if(cmd=="Change Venue")
     {
-        //I'm just adjusting the processor calm down guys I know TC has this
+		command_state = Initial;
     }
     else
     {
