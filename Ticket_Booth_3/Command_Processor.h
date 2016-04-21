@@ -26,8 +26,8 @@ private:
     static Venue** venues;
     static int* nr_venues;
     static Venue* selected_venue;
-    static void Add_State();
-    static City* Get_City();
+ //   static void Add_State();
+   // static City* Get_City();
     static void Output_XML();
 
 };

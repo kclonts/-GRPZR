@@ -191,7 +191,7 @@ void Command_Processor::Output_XML()
     outfile << "<USA>\n";
     for (int i = 0; i < *nr_venues; ++i)
     {
-        venues[i]->Output_XML(outfile);
+		;// venues[i]->Output_XML(outfile);
     }
     outfile << "</USA>\n";
     outfile.close();
